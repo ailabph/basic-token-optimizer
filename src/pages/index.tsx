@@ -37,14 +37,14 @@ export default function Home() {
           <option value="json">JSON</option>
           <option value="sol">Solidity</option>
         </select>
-        <textarea value={inputText} onChange={(e) => setInputText(e.target.value)} className="w-full p-2 border rounded text-black" rows="10" />
+        <textarea value={inputText} onChange={(e) => setInputText(e.target.value)} className="w-full p-2 border rounded text-black" rows={Number("10")} />
         <button type="submit" className="w-full p-2 bg-blue-500 text-white rounded">Process</button>
       </form>
       <p className="mt-4 white">Input token count: {inputTokenCount}</p>
       <p className="text-white">Output token count: {outputTokenCount}</p>
       <p className="text-white">Reduction: {reduction.toFixed(2)}%</p>
       {isLoading && <p className="text-black">Processing...</p>}
-      <textarea value={outputText} readOnly className="w-full p-2 border rounded mt-4 text-black" rows="10" />
+      <textarea value={outputText} readOnly className="w-full p-2 border rounded mt-4 text-black" rows={Number("10")} />
     </div>
   );
 }
