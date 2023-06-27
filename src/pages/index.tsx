@@ -6,7 +6,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [fileType, setFileType] = useState('js');
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
     const response = await fetch('/api/process', {
