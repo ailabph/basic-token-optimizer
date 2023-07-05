@@ -1,5 +1,5 @@
+//src/pages/api/process.ts
 import type { NextApiRequest, NextApiResponse } from 'next';
-
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
@@ -19,6 +19,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       text = text.replace(/\s*([=+-/*])\s*/g, '$1');
       // Remove unnecessary semicolons
       text = text.replace(/;\s*([{}[\]()])/g, '$1');
+      // Remove comments
+      text = text.replace(/\/\*[\s\S]*?\*\/|\/\/.*/g,'');
     }
 
     // Return processed text

@@ -1,3 +1,4 @@
+//src/pages/index.tsx
 import { useState } from 'react';
 
 export default function Home() {
